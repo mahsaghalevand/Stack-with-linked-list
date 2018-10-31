@@ -2,7 +2,7 @@
 #include "Stack.h"
 using namespace std;
 
-void showStack(Stack<int> &s)
+void showStack(Stack<int>& s)
 {
   while (!s.empty())
   {

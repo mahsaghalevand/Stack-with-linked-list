@@ -1,4 +1,11 @@
 
+/**
+ * @file Stack.h
+ *
+ * @author <a href="mailto:mahsa081997@gmail.com">Mahsa Ghalevand</a>
+ * @date Oct 30 , 2018
+ */
+
 template <typename T>
 Stack<T>::Stack() :
         head_(NULL),
@@ -13,7 +20,14 @@ Stack<T>::~Stack()
 }
 
 template <typename T>
-bool Stack<T>::empty()
+Stack<T>::Stack(const Stack &p2) :
+        head_(p2.head_),
+        top_(p2.top_)
+{ }
+
+
+template <typename T>
+bool Stack<T>::empty() const
 {
   return head_ == NULL;
 }
@@ -29,7 +43,7 @@ void Stack<T>::push(T num)
 }
 
 template <typename T>
-T Stack<T>::top()
+T Stack<T>::top() const
 {
   return head_->data_;
 }
@@ -44,7 +58,8 @@ void Stack<T>::pop()
 }
 
 template <typename T>
-int Stack<T>::size()
+int Stack<T>::size() const
 {
   return top_ + 1;
 }
+

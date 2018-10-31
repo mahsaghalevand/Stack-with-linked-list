@@ -1,3 +1,4 @@
+
 /**
  * @file Stack.h
  *
@@ -6,7 +7,6 @@
  */
 
 #pragma once
-
 #include <iostream>
 
 template <typename T>
@@ -23,19 +23,16 @@ class Stack
 public:
   Stack();
   ~Stack();
-  bool empty();
+  bool empty() const;
   void push(T num);
-  T top();
+  T top() const;
   void pop();
-  int size();
+  int size() const;
 
 private:
   Node<T> *head_;
   int top_;
-  Stack(const Stack &p2) :
-          head_(p2.head_),
-          top_(p2.top_)
-  { }
+  Stack(const Stack &p2);
 };
 
 #include "Stack.tcc"
